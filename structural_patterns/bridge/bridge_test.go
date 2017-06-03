@@ -22,7 +22,7 @@ func TestShoppingCard_Checkout(t *testing.T) {
 
 	// accepting payment through stripe
 	stripe := new(Stripe)
-	shoppingCard := ShoppingCard{
+	shoppingCard := ShoppingCart{
 		Payment: stripe,
 	}
 
@@ -33,7 +33,7 @@ func TestShoppingCard_Checkout(t *testing.T) {
 
 	// accepting payment through paypal
 	paypal := new(Paypal)
-	shoppingCard = ShoppingCard{
+	shoppingCard = ShoppingCart{
 		Payment: paypal,
 	}
 
