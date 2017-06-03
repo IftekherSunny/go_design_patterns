@@ -18,27 +18,27 @@ func TestPaypal_Pay(t *testing.T) {
 	}
 }
 
-func TestShoppingCard_Checkout(t *testing.T) {
+func TestShoppingCart_Checkout(t *testing.T) {
 
 	// accepting payment through stripe
 	stripe := new(Stripe)
-	shoppingCard := ShoppingCart{
+	shoppingCart := ShoppingCart{
 		Payment: stripe,
 	}
 
-	// assert shopping card checkout message with stripe return value
-	if shoppingCard.Checkout("stripe") != stripe.Pay() {
+	// assert shopping Cart checkout message with stripe return value
+	if shoppingCart.Checkout("stripe") != stripe.Pay() {
 		t.Error("Payment message should be 'Payment has been accepted by the stripe gateway'")
 	}
 
 	// accepting payment through paypal
 	paypal := new(Paypal)
-	shoppingCard = ShoppingCart{
+	shoppingCart = ShoppingCart{
 		Payment: paypal,
 	}
 
-	// assert shopping card checkout message with paypal return value
-	if shoppingCard.Checkout("paypal") != paypal.Pay() {
+	// assert shopping Cart checkout message with paypal return value
+	if shoppingCart.Checkout("paypal") != paypal.Pay() {
 		t.Error("Payment message should be 'Payment has been accepted by the paypal gateway'")
 	}
 }

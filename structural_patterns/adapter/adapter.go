@@ -58,7 +58,7 @@ type ShoppingCart struct {
 	Payment Payment
 }
 
-// accepting shopping card payment
+// accepting shopping cart payment
 func (s *ShoppingCart) Checkout(gatewayName string) string {
 	switch gatewayName {
 	case "paypal":

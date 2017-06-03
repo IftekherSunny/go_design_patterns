@@ -34,27 +34,27 @@ func TestPaypalAdapter_Pay(t *testing.T) {
 	}
 }
 
-func TestShoppingCard_Checkout(t *testing.T) {
+func TestShoppingCart_Checkout(t *testing.T) {
 
 	// accepting payment through stripe adapter
 	stripeAdapter := new(StripeAdapter)
-	shoppingCard := ShoppingCart{
+	shoppingCart := ShoppingCart{
 		Payment: stripeAdapter,
 	}
 
 	// assert shopping card checkout message with stripe adapter return value
-	if shoppingCard.Checkout("stripe") != stripeAdapter.Pay() {
+	if shoppingCart.Checkout("stripe") != stripeAdapter.Pay() {
 		t.Error("Payment message should be 'Payment has been accepted by the stripe gateway'")
 	}
 
 	// accepting payment through paypal adapter
 	paypalAdapter := new(PaypalAdapter)
-	shoppingCard = ShoppingCart{
+	shoppingCart = ShoppingCart{
 		Payment: paypalAdapter,
 	}
 
 	// assert shopping card checkout message with paypal adapter return value
-	if shoppingCard.Checkout("paypal") != paypalAdapter.Pay() {
+	if shoppingCart.Checkout("paypal") != paypalAdapter.Pay() {
 		t.Error("Payment message should be 'Payment has been accepted by the paypal gateway'")
 	}
 }
