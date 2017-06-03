@@ -52,14 +52,14 @@ func (p *PaypalAdapter) Pay() string {
 }
 
 ////////////////////////////////////////////
-// Shopping card
+// Shopping cart
 ////////////////////////////////////////////
-type ShoppingCard struct {
+type ShoppingCart struct {
 	Payment Payment
 }
 
 // accepting shopping card payment
-func (s *ShoppingCard) Checkout(gatewayName string) string {
+func (s *ShoppingCart) Checkout(gatewayName string) string {
 	switch gatewayName {
 	case "paypal":
 		return s.Payment.Pay()

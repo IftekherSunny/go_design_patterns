@@ -38,7 +38,7 @@ func TestShoppingCard_Checkout(t *testing.T) {
 
 	// accepting payment through stripe adapter
 	stripeAdapter := new(StripeAdapter)
-	shoppingCard := ShoppingCard{
+	shoppingCard := ShoppingCart{
 		Payment: stripeAdapter,
 	}
 
@@ -49,7 +49,7 @@ func TestShoppingCard_Checkout(t *testing.T) {
 
 	// accepting payment through paypal adapter
 	paypalAdapter := new(PaypalAdapter)
-	shoppingCard = ShoppingCard{
+	shoppingCard = ShoppingCart{
 		Payment: paypalAdapter,
 	}
 
