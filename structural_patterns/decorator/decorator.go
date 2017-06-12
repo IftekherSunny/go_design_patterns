@@ -12,7 +12,7 @@ type PaymentMethod interface {
 ////////////////////////////////////////////
 type PaypalDecorator struct{}
 
-// pay method implementation for the paypal gateway
+// pay method implementation for the paypal gateway decorator
 func (self *PaypalDecorator) Pay(amount float32) string {
 
 	// call gateway api and process billing
